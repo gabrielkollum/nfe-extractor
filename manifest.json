@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "SmartOticas NFe Extrator",
+    "version": "1.0.0",
+    "description": "Captura dados de NFe do site da SEFAZ e envia para o sistema SmartOticas",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://www.nfe.fazenda.gov.br/*",
+        "http://localhost:8000/*",
+        "http://127.0.0.1:8000/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/logo-smartoticas16.png",
+            "48": "icons/logo-smartoticas48.png",
+            "128": "icons/logo-smartoticas128.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.nfe.fazenda.gov.br/*"],
+            "js": ["content.js"],
+            "run_at": "document_idle"
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "icons": {
+        "16": "icons/logo-smartoticas16.png",
+        "48": "icons/logo-smartoticas48.png",
+        "128": "icons/logo-smartoticas128.png"
+    }
+}

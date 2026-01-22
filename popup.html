@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartOticas NFe Extrator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Tela de Login -->
+    <div id="loginScreen" class="container">
+        <div class="header">
+            <h2>📄 SmartOticas NFe Extrator</h2>
+            <p class="subtitle">SmartOticas</p>
+        </div>
+
+        <div class="login-form">
+            <h3>🔐 Login</h3>
+            <p class="login-subtitle">Configure suas credenciais de acesso</p>
+
+            <div class="form-group">
+                <label for="loginUrl">🔗 URL do Sistema:</label>
+                <input type="text" id="loginUrl" placeholder="http://localhost:8000" required>
+            </div>
+
+            <div class="form-group">
+                <label for="loginUsuario">👤 Usuário:</label>
+                <input type="text" id="loginUsuario" placeholder="Digite seu usuário" required>
+            </div>
+
+            <div class="form-group">
+                <label for="loginSenha">🔒 Senha:</label>
+                <input type="password" id="loginSenha" placeholder="Digite sua senha" required>
+            </div>
+
+            <button id="loginBtn" class="btn btn-primary">
+                <span class="btn-icon">✓</span>
+                Entrar
+            </button>
+
+            <div id="loginStatus" class="status" style="margin-top: 15px;"></div>
+        </div>
+
+        <div class="footer">
+            <small>v1.0.0 | SmartOticas © 2026</small>
+        </div>
+    </div>
+
+    <!-- Tela Principal (após login) -->
+    <div id="mainScreen" class="container" style="display: none;">
+        <div class="header">
+            <h2>📄 SmartOticas NFe Extrator</h2>
+            <p class="subtitle">SmartOticas</p>
+        </div>
+
+        <div class="user-info">
+            <p>👤 Usuário: <strong id="usuarioLogado"></strong></p>
+            <p>🔗 Sistema: <strong id="sistemaUrl"></strong></p>
+        </div>
+
+        <button id="logoutBtn" class="logout-btn">🚪 Sair</button>
+
+        <div class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Processando...</p>
+        </div>
+
+        <div id="status" class="status"></div>
+
+        <div id="produtosPreview" class="produtos-preview"></div>
+
+        <div class="footer">
+            <small>v1.0.0 | SmartOticas © 2026</small>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
